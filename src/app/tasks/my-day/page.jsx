@@ -1,10 +1,8 @@
-import Event from "@/components/Event";
-import Hero from "@/components/Hero";
-import Modal from "@/components/Modal";
-import TaskList from "@/components/TaskList";
+import Event from "@/components/Event"
+import TaskList from "@/components/TaskList"
 
-export default function Home() {
-  const allTasks = [
+const MyDay = () => {
+  const myDayTasks = [
       { title: 'Read the report', project: 'Personal', done: true },
       { title: 'Write the report', project: 'Work', done: false },
       { title: 'Read the report', project: 'Shopping', done: false },
@@ -14,9 +12,7 @@ export default function Home() {
     <main className="container mx-auto">
       <div className="flex flex-col mt-20 lg:mt-0 lg:flex-row lg:ml-64">
         <section id="main" className="lg:w-3/5 2xl:w-3/5 m-4">
-          <Hero />
-          <TaskList headerTitle={"All Tasks"} data={allTasks}/>
-          <Modal />
+          <TaskList headerTitle={"My Day Tasks"} data={myDayTasks} />
           <div className="fixed w-full left-0 lg:left-auto lg:w-2/5 pt-10 pb-4 bottom-0 bg-gradient-to-t from-white">
             <div className="w-full flex justify-center">
               <button className="flex items-center py-2 px-5 rounded-3xl bg-gray-300 hover:bg-gray-200 font-bold text-gray-700">
@@ -40,5 +36,7 @@ export default function Home() {
         </section>
       </div>
     </main>
-  );
+  )
 }
+
+export default MyDay
